@@ -1,0 +1,16 @@
+version: "3.8"
+# set the name of the service to pocketbase
+services:
+  pocketbase:
+    container_name: pocketbase
+    build: .
+    volumes:
+      - ./data/:/app/pocketbase/pb_data
+    networks:
+      - my-network
+    ports:
+      - "8090:8090"
+
+networks:
+  my-network:
+    name: my-network
